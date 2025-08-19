@@ -1,2 +1,2 @@
-# html-salesminus
+# html.salesminus
 Sales Minus Basics
