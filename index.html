@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Page - Sales Minus</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+        background: #f8f9fa;
+    }
+    header {
+        background: #2a4d69;
+        color: #fff;
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 22px;
+    }
+    nav {
+        margin-top: 5px;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 80px auto 40px;
+        padding: 0 15px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    h2 {
+        color: #2a4d69;
+        margin-top: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        vertical-align: top;
+    }
+    th {
+        background-color: #e9ecef;
+        font-weight: bold;
+    }
+    @media (max-width: 768px) {
+        nav a {
+            display: block;
+            margin: 5px 0;
+        }
+        header {
+            text-align: center;
+        }
+        table {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Sales MINUS</h1>
+    <nav>
+        <a href="#provision-booking">Provision Booking</a>
+        <a href="#back-margin">Back Margin</a>
+        <a href="#provision-release">Provision Release</a>
+        <a href="#provision-adjustment">Provision Adjustment</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section id="provision-booking">
+        <h2>Provision Booking</h2>
+        <table>
+            <tr>
+                <th>T1</th>
+                <th>T2</th>
+                <th>Promo</th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    The T1, T2 and Promo (T1/T2) provision is automatically recorded by SAP, which calculates it based on the rebate percentage specified in the ZPB123 file. This file, which contains the necessary rebate details, is updated once every quarter to ensure that the provision is accurately booked in alignment with the most current rebate percentages (CEE Regions provide the promo budget at the beginning of each quarter, then break it down from the BU level to the SKU level according to the sell-in distribution.)
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="back-margin">
+        <h2>Back Margin</h2>
+        <table>
+            <tr>
+                <th>Back Margin (A)</th>
+            </tr>
+            <tr>
+                <td>
+                    The BM provision is calculated by multiplying the BM sell-in data for the current month (extracted from SAP) by the BM%. BM% is provided by the business managers. Ideally, this requires a quarterly business review to ensure accuracy, as these percentages are essential for determining the required provision amounts.
+                </td>
+            </tr>
+            <tr>
+                <th>Back Margin (B)</th>
+            </tr>
+            <tr>
+                <td>
+                    This approach is designed to load BM provision input from the CEE team. Due to the relative newness of the BM concept and the limited historical data available, the team prefers to share specific provision amounts rather than percentages for accuracy.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="provision-release">
+        <h2>Provision Release</h2>
+        <table>
+            <tr>
+                <th>T1</th>
+                <th>T2</th>
+                <th>Promo</th>
+                <th>Back Margin</th>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    The goal is to determine if our provision fully covers 100% of the payment. If so, we will release the entire payment amount. If not, we will release only the provision amount.
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="provision-adjustment">
+        <h2>Provision Adjustment</h2>
+        <table>
+            <tr>
+                <th>Adjustment</th>
+            </tr>
+            <tr>
+                <td>
+                    The primary purpose of provision adjustment is to address discrepancies between the actual achieved provision and the automated provision (based on ZPB123). For instance: <br><br>
+                    <strong>T1 Adjustment</strong> = Actual Achieved Rebate (recorded on MSD) - Automated Provision (recorded on SAP)
+                    <br><br>
+                    Please note that the approach for quarterly and monthly adjustments differs. For example, auto provisions booked in SAP must be reversed by the end of the quarter, after which we will book the provisions based on the actual amounts.
+                </td>
+            </tr>
+        </table>
+    </section>
+</div>
+</body>
+</html>
+
